@@ -1,3 +1,12 @@
+window.addEventListener("load", function() {
+    const audio = document.getElementById("music");
+    audio.play().catch(() => {
+      document.body.addEventListener("click", function() {
+        audio.play();
+      }, { once: true });
+    });
+  });
+
 const CONFIG = {
     mainQuestion: "Will you be my Valentine?",
     subQuestion: "Please say yes ",
@@ -367,3 +376,4 @@ document.addEventListener('DOMContentLoaded', () => {
     new ParticleSystem();
     initMouseTrail();
 });
+
